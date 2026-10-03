@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Selectors Example</title>
+</head>
+
+<body>
+    <h1 id="title">Welcome to My page</h1>
+    <p class="info">This is the first paragraph</p>
+    <p class="info">This is the second paragraph</p>
+    <button onclick="showContent()">Click Me </button>
+    <div id="output" style="margin-top:20px;color:green;"></div>
+    <script>
+        function showContent() {
+            const title = document.getElementById("title").textContent;
+            const paragraphs = document.querySelectorAll(".info");
+            let output = "<strong>Title:</strong>" + title + "<br><strong>Paragraph:</strong></br>";
+            paragraphs.forEach((para, index) => {
+                output += (index + 1) + "." + para.textContent + "<br>";
+            });
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+
+</html>
